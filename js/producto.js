@@ -177,13 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let originalBaseNum = currentVariant && currentVariant.originalPriceNum ? currentVariant.originalPriceNum : basePriceNum;
     let discountText = currentVariant && currentVariant.discountBadge ? currentVariant.discountBadge : '(-25%)';
     
-    // 25% discount if qty is 1000 or more
-    if (newQty >= 1000) {
-      finalBasePrice = basePriceNum * 0.75;
-      hasDiscount = true;
-      originalBaseNum = basePriceNum;
-      discountText = '(-25%)';
-    } else if (currentVariant && currentVariant.originalPriceNum) {
+    if (currentVariant && currentVariant.originalPriceNum) {
       hasDiscount = true;
     }
     
