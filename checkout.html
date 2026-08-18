@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="33Store - La tienda #1 de Suscripciones Premium. Netflix, Spotify, Gaming y Software con entrega inmediata y garantía.">
+  <meta property="og:title" content="33Store | Suscripciones Premium">
+  <meta property="og:description" content="Ahorra hasta un 80% en tus servicios diarios. Entrega inmediata y soporte 24/7.">
+  <meta property="og:image" content="https://33store.ar/img/logo.jpg">
+  <meta property="og:url" content="https://33store.ar">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Checkout - 33Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=55">
+  
+  <link rel="stylesheet" href="css/style.css?v=55">
+  <link rel="stylesheet" href="css/premium-cards.css?v=55">
+  <style>
+    .checkout-page {
+      padding: 4rem 1rem;
+    }
+    .checkout-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    @media(min-width: 768px) {
+      .checkout-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .checkout-left {
+        width: 60%;
+      }
+      .checkout-right {
+        width: 40%;
+        position: sticky;
+        top: 100px;
+      }
+    }
+
+    .checkout-box {
+      background: #0d0f12;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      margin-bottom: 2rem;
+    }
+
+    .checkout-box h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ig-message {
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .ig-message > i {
+      font-size: 4rem;
+      color: #E1306C;
+      margin-bottom: 1rem;
+    }
+    .ig-message p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .btn-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-ig:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+    }
+
+    .order-summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .order-summary-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .order-item-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .order-item-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .order-item-details h4 {
+      margin: 0 0 0.25rem 0;
+      font-size: 0.95rem;
+    }
+    .order-item-details p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .order-item-price {
+      font-weight: 700;
+    }
+
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed rgba(255,255,255,0.2);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    .text-accent {
+      color: #f002e1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="productos" class="nav-link">Productos</a>
+      </div>
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Section -->
+  <section class="checkout-page">
+    <div class="checkout-container">
+      
+      <!-- Left: Instructions -->
+      <div class="checkout-left">
+        <div class="checkout-box">
+          <h2><i class="fa-solid fa-lock text-accent"></i> Finalizar Compra</h2>
+          
+          <div class="ig-message">
+            <i class="fa-brands fa-instagram"></i>
+            <p>Para garantizar la máxima seguridad y una atención personalizada, procesamos todos nuestros pagos de forma manual a través de nuestro Instagram oficial.</p>
+            <p>Por favor, comunícate con nosotros enviando una captura de pantalla de tu pedido (o indicándonos qué deseas llevar) y te proporcionaremos los métodos de pago (Transferencia, Crypto, etc.).</p>
+            
+            <button id="btn-copy-order" class="btn-pro-outline" style="margin-bottom: 1rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(255,255,255,0.05); font-weight: 700; font-size: 1.1rem; padding: 1rem 2rem; border-radius: 12px;">
+              <i class="fa-solid fa-copy"></i> Copiar Resumen del Pedido
+            </button>
+            <a href="https://www.instagram.com/33store.ar/" target="_blank" class="btn-ig">
+              <i class="fa-brands fa-instagram"></i> Ir al Instagram de 33Store
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Order Summary -->
+      <div class="checkout-right">
+        <div class="checkout-box">
+          <h2>Resumen del Pedido</h2>
+          
+          <div id="checkout-items">
+            <!-- Items will be injected here via JS -->
+            <p style="color: gray; text-align: center;">Cargando pedido...</p>
+          </div>
+
+          <div class="order-total-row">
+            <span>Total a pagar</span>
+            <span id="checkout-total" class="text-accent">ARS 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/currency.js?v=57"></script>
+  <script src="js/cartManager.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/checkout.js?v=57"></script>
+</body>
+</html>

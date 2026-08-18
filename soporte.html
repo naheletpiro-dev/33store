@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="33Store - La tienda #1 de Suscripciones Premium. Netflix, Spotify, Gaming y Software con entrega inmediata y garantía.">
+  <meta property="og:title" content="33Store | Suscripciones Premium">
+  <meta property="og:description" content="Ahorra hasta un 80% en tus servicios diarios. Entrega inmediata y soporte 24/7.">
+  <meta property="og:image" content="https://33store.ar/img/logo.jpg">
+  <meta property="og:url" content="https://33store.ar">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Soporte - 33Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  
+  <link rel="stylesheet" href="./css/style.css?v=55">
+  <link rel="stylesheet" href="./css/premium-cards.css?v=55">
+  <style>
+    .support-hero {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+    }
+    .support-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .support-hero p {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .support-hub {
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+    .support-hub-main {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+    }
+    @media(min-width: 768px) {
+      .support-hub-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .support-hub-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .support-eyebrow {
+      color: #a322ff;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .support-hub-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .support-hub-content p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn-ig-support {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+    .btn-ig-support:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+    }
+
+    .support-hub-visual {
+      background: rgba(0,0,0,0.3);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .mock-chat {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .mock-chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .mock-msg {
+      background: rgba(255,255,255,0.05);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .mock-msg.user {
+      background: rgba(163, 34, 255, 0.2);
+      margin-left: 2rem;
+      text-align: right;
+    }
+    .mock-msg.support {
+      margin-right: 2rem;
+    }
+
+    .support-prep {
+      margin-top: 1rem;
+    }
+    .support-prep h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .support-prep ul {
+      list-style: none;
+      padding: 0;
+    }
+    .support-prep li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-text-muted);
+    }
+    .support-prep li i {
+      color: #a322ff;
+      font-size: 1.2rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* Process Timeline */
+    .support-timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    @media(min-width: 768px) {
+      .support-timeline {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .step-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(163, 34, 255, 0.1);
+      color: #a322ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .step-text h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+    .step-text p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="productos" class="nav-link">Productos</a>
+        <a href="reseñas" class="nav-link">Reseñas</a>
+        <a href="soporte" class="nav-link active">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        <!-- Botón de carrito -->
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Support Hero -->
+  <header class="support-hero">
+    <p class="support-eyebrow" style="margin-bottom: 0.5rem; display: block;">Atención al Cliente Premium</p>
+    <h1>Soporte que te <br><span class="text-gradient">resuelve todo.</span></h1>
+    <p>Orientación clara antes y después de tu compra, con asistencia real a través de nuestro canal oficial de Instagram.</p>
+  </header>
+
+  <!-- Support Main Hub -->
+  <section class="support-hub">
+    <div class="support-hub-main">
+      <div class="support-hub-content">
+        <span class="support-eyebrow">Atención Directa</span>
+        <h2>Cuéntanos qué pasó.<br><b>Nosotros nos encargamos.</b></h2>
+        <p>Pedidos, preguntas sobre cuentas, problemas con productos y reposiciones de garantía son manejados por nuestro equipo real en nuestro canal oficial.</p>
+        <a href="https://www.instagram.com/33store.ar/" target="_blank" class="btn-ig-support">
+          <i class="fa-brands fa-instagram"></i> Abrir Instagram
+        </a>
+      </div>
+      
+      <div class="support-hub-visual">
+        <div class="mock-chat">
+          <div class="mock-chat-header">
+            <i class="fa-solid fa-lock" style="color: #00ff66;"></i> Chat Seguro - 33Store
+          </div>
+          <div class="mock-msg user">
+            Hola, necesito ayuda con mi pedido de Netflix. Mi email es usuario@gmail.com
+          </div>
+          <div class="mock-msg support">
+            <i class="fa-solid fa-headset" style="color: #a322ff;"></i> <strong>Soporte:</strong> ¡Hola! Hemos encontrado tu pedido. Déjanos revisar el producto para enviarte el reemplazo de inmediato.
+          </div>
+        </div>
+
+        <div class="support-prep">
+          <h3>Para una respuesta más rápida, envíanos:</h3>
+          <ul>
+            <li><i class="fa-solid fa-receipt"></i> Captura del pedido o comprobante.</li>
+            <li><i class="fa-regular fa-envelope"></i> El correo electrónico usado.</li>
+            <li><i class="fa-solid fa-camera"></i> Una captura del problema (si aplica).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="support-timeline">
+      <div class="timeline-step">
+        <div class="step-icon"><i class="fa-brands fa-instagram"></i></div>
+        <div class="step-text">
+          <h4>1. Envíanos un DM</h4>
+          <p>Escríbenos por Instagram con los detalles de tu problema o duda.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="step-text">
+          <h4>2. Lo verificamos</h4>
+          <p>Revisamos tu caso en nuestro sistema y validamos la garantía.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="step-text">
+          <h4>3. Recibe la solución</h4>
+          <p>Te entregamos las nuevas credenciales o la asistencia requerida al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="brand" style="justify-content: center; margin-bottom: 1rem;">
+        <div class="brand-icon" style="width: 24px; height: 24px; background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 4px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </div>
+      <p>© 2026 33Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Drawer del Carrito -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button class="close-cart" id="close-cart"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-amount">$ 0</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkout-btn" style="background: #8b5cf6; color: white; border: 1px solid #c084fc; border-radius: 8px; padding: 0.8rem; font-weight: bold; cursor: pointer; box-shadow: 0 0 10px #c084fc, 0 0 20px #8b5cf6; text-shadow: 0 0 5px rgba(255,255,255,0.5);">
+        <i class="fa-solid fa-lock"></i> Comprar ahora
+      </button>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/currency.js?v=57"></script>
+  <script src="js/cartManager.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+</body>
+</html>

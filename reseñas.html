@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="33Store - La tienda #1 de Suscripciones Premium. Netflix, Spotify, Gaming y Software con entrega inmediata y garantía.">
+  <meta property="og:title" content="33Store | Suscripciones Premium">
+  <meta property="og:description" content="Ahorra hasta un 80% en tus servicios diarios. Entrega inmediata y soporte 24/7.">
+  <meta property="og:image" content="https://33store.ar/img/logo.jpg">
+  <meta property="og:url" content="https://33store.ar">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Reseñas - 33Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  
+  <link rel="stylesheet" href="./css/style.css?v=55">
+  <style>
+    /* Reviews Hero */
+    .reviews-hero {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-hero-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(163, 34, 255, 0.15);
+      filter: blur(100px);
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .reviews-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .reviews-hero p {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rating-summary {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem 3rem;
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .rating-score {
+      font-size: 3.5rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .rating-stars {
+      color: #f0b429;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .rating-count {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Másonry Grid */
+    .reviews-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      columns: 1;
+      column-gap: 1.5rem;
+    }
+    @media(min-width: 768px) {
+      .reviews-container {
+        columns: 2;
+      }
+    }
+    @media(min-width: 1024px) {
+      .reviews-container {
+        columns: 3;
+      }
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      break-inside: avoid;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .review-card:hover {
+      background: rgba(255,255,255,0.04);
+      transform: translateY(-3px);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a322ff, #f002e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .reviewer-details h4 {
+      margin: 0 0 0.2rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .reviewer-details span {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .verified-badge {
+      color: #00ff66;
+    }
+
+    .review-product {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      color: #c975ff;
+      margin-bottom: 1rem;
+    }
+    .review-product i {
+      font-size: 0.9rem;
+    }
+
+    .review-text {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="productos" class="nav-link">Productos</a>
+        <a href="reseñas" class="nav-link active">Reseñas</a>
+        <a href="soporte" class="nav-link">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        <!-- Botón de carrito -->
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="reviews-hero">
+    <div class="reviews-hero-glow"></div>
+    <h1>Lo que dicen <span class="text-gradient">nuestros clientes</span></h1>
+    <p>Más de 10,000 usuarios confían en 33Store todos los meses para disfrutar de sus servicios digitales favoritos sin interrupciones.</p>
+    
+    <div class="rating-summary">
+      <div class="rating-score">4.9</div>
+      <div class="rating-stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+      </div>
+      <div class="rating-count">Basado en +10,000 reseñas verificadas</div>
+    </div>
+  </header>
+
+  <!-- Reviews Grid -->
+  <section class="reviews-container">
+    
+    <!-- Card 1 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">M</div>
+          <div class="reviewer-details">
+            <h4>Mateo R.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-solid fa-film"></i> Netflix Lifetime
+      </div>
+      <p class="review-text">Increíble. Hice el pedido, mandé el mensaje por Instagram y en menos de 5 minutos ya estaba viendo mi serie. El precio es una locura, lo recomiendo a todos mis amigos.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background: #2563eb;">S</div>
+          <div class="reviewer-details">
+            <h4>Sofía L.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-brands fa-spotify"></i> Spotify Premium
+      </div>
+      <p class="review-text">Llevo 4 meses con la cuenta y nunca se me cayó. La atención de los chicos por mensaje directo es super rápida y amable. 10/10.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background: #10b981;">T</div>
+          <div class="reviewer-details">
+            <h4>Tomás G.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-solid fa-robot"></i> ChatGPT Plus
+      </div>
+      <p class="review-text">Todo perfecto, la cuenta me llegó rápido. Tuve un pequeño problema para iniciar sesión la primera vez pero el soporte por Instagram me lo resolvió al instante.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background: #f59e0b;">C</div>
+          <div class="reviewer-details">
+            <h4>Camila V.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-solid fa-gamepad"></i> Xbox Game Pass
+      </div>
+      <p class="review-text">Excelente servicio. Es la tercera vez que les compro suscripciones a ellos y nunca decepcionan. Los precios son por lejos los mejores de Argentina.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background: #ef4444;">J</div>
+          <div class="reviewer-details">
+            <h4>Joaquín M.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-brands fa-discord"></i> Discord Nitro
+      </div>
+      <p class="review-text">Rapidísimo. Pagas por transferencia, mandas el comprobante al IG y te lo activan en el momento. Muy confiables, no duden en comprar.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background: #8b5cf6;">V</div>
+          <div class="reviewer-details">
+            <h4>Valentina P.</h4>
+            <span><i class="fa-solid fa-circle-check verified-badge"></i> Comprador verificado</span>
+          </div>
+        </div>
+        <div class="rating-stars" style="font-size: 0.9rem;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="review-product">
+        <i class="fa-solid fa-film"></i> Combo Streaming
+      </div>
+      <p class="review-text">Compré el combo de Max y Disney. Ningún problema hasta ahora, ambas cuentas funcionan bárbaro y en 4K. La atención de primera.</p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="brand" style="justify-content: center; margin-bottom: 1rem;">
+        <div class="brand-icon" style="width: 24px; height: 24px; background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 4px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </div>
+      <p>© 2026 33Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Drawer del Carrito -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button class="close-cart" id="close-cart"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-amount">$ 0</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkout-btn" style="background: #8b5cf6; color: white; border: 1px solid #c084fc; border-radius: 8px; padding: 0.8rem; font-weight: bold; cursor: pointer; box-shadow: 0 0 10px #c084fc, 0 0 20px #8b5cf6; text-shadow: 0 0 5px rgba(255,255,255,0.5);">
+        <i class="fa-solid fa-lock"></i> Comprar ahora
+      </button>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/currency.js?v=57"></script>
+  <script src="js/cartManager.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/reviews-data.js?v=57"></script>
+</body>
+</html>

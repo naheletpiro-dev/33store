@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nuestra biblioteca de juegos acaba de explotar. Añadimos 15 nuevos títulos de Steam Lifetime y lanzamos nuestra esperada categoría de Cuentas de Fortnite FA.">
+  <title>¡Expansión Masiva! Nuevos Juegos de Steam y Cuentas de Fortnite - 33Store</title>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  <link rel="stylesheet" href="../css/style.css?v=55">
+  
+  <style>
+    :root {
+      --blog-accent: #f002e1;
+    }
+    
+    body {
+      background-color: #050505;
+      color: #fff;
+    }
+
+    .post-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .post-top-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .back-link:hover {
+      color: #fff;
+    }
+
+    .post-date-badge {
+      border: 1px solid var(--blog-accent);
+      color: var(--blog-accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .post-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-excerpt {
+      color: #9ca3af;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .post-thumbnail {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .post-content {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #d1d5db;
+    }
+
+    .post-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .post-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .post-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-content strong {
+      color: #fff;
+    }
+
+    .post-content a {
+      color: var(--blog-accent);
+      text-decoration: none;
+    }
+    .post-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .post-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="../img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="../productos" class="nav-link">Productos</a>
+        <a href="../blog" class="nav-link active">Blog</a>
+        <a href="../reseñas" class="nav-link">Reseñas</a>
+        <a href="../soporte" class="nav-link">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="post-wrapper">
+      <div class="post-top-nav">
+        <a href="../blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Todos los posts</a>
+        <div class="post-date-badge">
+          <i class="fa-regular fa-calendar"></i> 15 de Agosto, 2026
+        </div>
+      </div>
+      
+      <h1 class="post-title">¡Expansión Masiva! Nuevos Juegos de Steam y Cuentas de Fortnite</h1>
+      <p class="post-excerpt">Nuestra biblioteca de juegos acaba de explotar. Añadimos 15 nuevos títulos de Steam Lifetime y lanzamos nuestra esperada categoría de Cuentas de Fortnite FA.</p>
+      
+      <img src="../img/blog/nuevos-juegos.jpg" alt="¡Expansión Masiva! Nuevos Juegos de Steam y Cuentas de Fortnite" class="post-thumbnail">
+      
+      <div class="post-content">
+        
+      <p>En 33Store, seguimos trabajando todos los días para traerte el mejor entretenimiento digital al mejor precio. Hoy anunciamos una de las actualizaciones de catálogo más grandes del año enfocada 100% en el <strong>Gaming</strong>. 🎮</p>
+      
+      <h2>Nuevos Juegos de Steam Lifetime 🚀</h2>
+      <p>Sabemos que comprar juegos originales a precio completo puede ser doloroso para el bolsillo. Por eso, hemos ampliado nuestra sección de <strong>Steam Accounts</strong> con 15 títulos súper populares para que los juegues con acceso Lifetime y entrega inmediata.</p>
+      
+      <p>Algunos de los juegos destacados que acabamos de agregar incluyen:</p>
+      <ul>
+        <li>⚽ <strong>EA SPORTS FC 26</strong></li>
+        <li>🔫 <strong>Red Dead Redemption 2</strong></li>
+        <li>🏎️ <strong>Forza Horizon 5</strong></li>
+        <li>🛒 <strong>Supermarket Simulator</strong></li>
+        <li>👮 <strong>Ready or Not</strong></li>
+        <li>Y muchos más (Among Us, Assetto Corsa, Cyberpunk 2077, Rust, etc).</li>
+      </ul>
+      
+      <h2>¡Lanzamiento: Cuentas de Fortnite! ⛏️</h2>
+      <p>¡Ustedes lo pidieron y nosotros lo trajimos! Hemos inaugurado nuestra categoría exclusiva de <strong>Cuentas de Fortnite</strong>. Todas nuestras cuentas son Full Access (FA), lo que significa que puedes cambiar el correo, la contraseña y el nick sin ningún problema.</p>
+      
+      <p>Tenemos opciones para todos los presupuestos y estilos de juego:</p>
+      <ul>
+        <li>🔥 <strong>Cuentas OG:</strong> Con skins veteranas, Picos Minty y cuentas exclusivas de temporadas antiguas.</li>
+        <li>⚔️ <strong>Ranked / Tournament Ready:</strong> Cuentas listas para competir.</li>
+        <li>🛡️ <strong>Black Knight & Travis Scott:</strong> Las joyas de la corona para los coleccionistas más exigentes.</li>
+      </ul>
+      
+      <div style="background: rgba(138, 43, 226, 0.1); border-left: 4px solid #8a2be2; padding: 1.5rem; margin-top: 2rem; border-radius: 4px;">
+        <h3 style="margin-top: 0; color: #fff;">¿Qué esperas para jugar?</h3>
+        <p>Todos estos productos ya están activos en nuestro catálogo con entrega automática inmediata tras la compra. <a href="/productos" style="color: #8a2be2; font-weight: bold;">Ve a la tienda ahora mismo y equípate.</a></p>
+      </div>
+
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>

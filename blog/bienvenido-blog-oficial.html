@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hoy, 14 de Agosto de 2026, ¡estamos súper emocionados de lanzar oficialmente el Blog de 33Store! 🎉">
+  <title>¡Bienvenido al Blog Oficial de 33Store! 🚀 - 33Store</title>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  <link rel="stylesheet" href="../css/style.css?v=55">
+  
+  <style>
+    :root {
+      --blog-accent: #f002e1;
+    }
+    
+    body {
+      background-color: #050505;
+      color: #fff;
+    }
+
+    .post-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .post-top-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .back-link:hover {
+      color: #fff;
+    }
+
+    .post-date-badge {
+      border: 1px solid var(--blog-accent);
+      color: var(--blog-accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .post-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-excerpt {
+      color: #9ca3af;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .post-thumbnail {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .post-content {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #d1d5db;
+    }
+
+    .post-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .post-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .post-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .post-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-content strong {
+      color: #fff;
+    }
+
+    .post-content a {
+      color: var(--blog-accent);
+      text-decoration: none;
+    }
+    .post-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .post-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="../img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="../productos" class="nav-link">Productos</a>
+        <a href="../blog" class="nav-link active">Blog</a>
+        <a href="../reseñas" class="nav-link">Reseñas</a>
+        <a href="../soporte" class="nav-link">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="post-wrapper">
+      <div class="post-top-nav">
+        <a href="../blog" class="back-link"><i class="fa-solid fa-arrow-left"></i> Todos los posts</a>
+        <div class="post-date-badge">
+          <i class="fa-regular fa-calendar"></i> 14 de Agosto, 2026
+        </div>
+      </div>
+      
+      <h1 class="post-title">¡Bienvenido al Blog Oficial de 33Store! 🚀</h1>
+      <p class="post-excerpt">Hoy, 14 de Agosto de 2026, ¡estamos súper emocionados de lanzar oficialmente el Blog de 33Store! 🎉</p>
+      
+      <img src="../img/blog/welcome-33store.jpg" alt="¡Bienvenido al Blog Oficial de 33Store! 🚀" class="post-thumbnail">
+      
+      <div class="post-content">
+        
+      <p>Hoy, <strong>14 de Agosto de 2026</strong>, ¡estamos súper emocionados de lanzar oficialmente el Blog de 33Store! 🎉</p>
+      
+      <p>Creamos este espacio para mantenerte actualizado sobre todo lo que sucede en nuestra tienda y comunidad.</p>
+      
+      <h2>¿Qué encontrarás en este blog? 🤔</h2>
+      <p>A partir de ahora, este será tu principal centro de noticias para:</p>
+      <ul>
+        <li>📢 <strong>Anuncios Importantes:</strong> Actualizaciones de la plataforma, alertas de mantenimiento y mejoras del sistema.</li>
+        <li>🛒 <strong>Nuevos Lanzamientos:</strong> Sé el primero en saber cuando añadimos nuevas cuentas, claves y servicios digitales.</li>
+        <li>🎁 <strong>Descuentos Exclusivos y Promos:</strong> Códigos de cupones especiales y ofertas para los lectores de nuestro blog.</li>
+      </ul>
+      
+      <h2>📸 ¡Síguenos en nuestro Instagram Oficial!</h2>
+      <p>¡No olvides que todas las actualizaciones del blog, anuncios, ventas y noticias también se publicarán en nuestro Instagram!</p>
+      <p>Únete a nuestra comunidad para obtener notificaciones instantáneas, soporte y ofertas exclusivas: 👉 <a href="https://www.instagram.com/33store.ar/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/33store.ar/</a></p>
+      
+      <h2>¡Mantente Sintonizado! ⭐</h2>
+      <p>Queremos hacer que tu experiencia en 33Store sea lo más fluida y rápida posible. ¡Guarda esta página en tus favoritos y revísala regularmente para que nunca te pierdas las mejores ofertas y noticias!</p>
+      
+      <p>¡Gracias por ser parte de nuestra creciente comunidad!</p>
+      
+      <p>👉 <a href="/productos">Explora nuestro catálogo ahora</a></p>
+    
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^producto/([0-9a-zA-Z_-]+)/?$ producto.html?id=$1 [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

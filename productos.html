@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="33Store - La tienda #1 de Suscripciones Premium. Netflix, Spotify, Gaming y Software con entrega inmediata y garantía.">
+  <meta property="og:title" content="33Store | Suscripciones Premium">
+  <meta property="og:description" content="Ahorra hasta un 80% en tus servicios diarios. Entrega inmediata y soporte 24/7.">
+  <meta property="og:image" content="https://33store.ar/img/logo.jpg">
+  <meta property="og:url" content="https://33store.ar">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Productos | 33Store</title>
+  <meta name="description" content="Catálogo completo de productos digitales.">
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  
+  <!-- Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/style.css?v=55">
+  <link rel="stylesheet" href="./css/premium-cards.css?v=55">
+</head>
+<body style="background: #020402;">
+
+  <!-- Navbar -->
+  <nav class="navbar" style="background: rgba(2,4,2,0.8);">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="productos" class="nav-link active">Productos</a>
+        <a href="blog" class="nav-link">Blog</a>
+        <a href="reseñas" class="nav-link">Reseñas</a>
+        <a href="soporte" class="nav-link">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Products Main Area -->
+  <main class="container" style="padding-top: 3rem; min-height: 80vh;">
+    <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Explorar Colección</h1>
+    <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Entrega digital instantánea y segura.</p>
+    
+    <!-- Barra de Filtros -->
+    <div class="filter-bar">
+      <div class="filter-controls">
+        <select class="filter-select" id="category-filter">
+          <option value="all">Todas las categorías</option>
+          <option value="AI Tools">AI Tools</option>
+          <option value="Creator Tools">Creator Tools</option>
+          <option value="Discord">Discord</option>
+          <option value="Food & Discounts">Food & Discounts</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Másic">Másic</option>
+          <option value="Social Media Growth">Social Media Growth</option>
+          <option value="Software & Learning">Software & Learning</option>
+          <option value="Sports Streaming">Sports Streaming</option>
+          <option value="Streaming">Streaming</option>
+          <option value="VPN & Security">VPN & Security</option>
+        </select>
+        <select class="filter-select" id="price-filter">
+          <option value="all">Precio</option>
+          <option value="low">Menor a mayor</option>
+          <option value="high">Mayor a menor</option>
+        </select>
+        <div class="search-wrapper" style="position: relative;">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" class="filter-search" id="search-input" placeholder="Buscar productos..." autocomplete="off">
+          <div id="search-autocomplete" class="search-autocomplete" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="filter-count" id="product-count">29 productos</div>
+    </div>
+
+    <div class="premium-card-grid" id="premium-grid">
+      <!-- Inyectado por premium-data.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="brand" style="justify-content: center; margin-bottom: 1rem;">
+        <div class="brand-icon" style="width: 24px; height: 24px; background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 4px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </div>
+      <p>© 2026 33Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal de Sub-Productos: overlay y modal son HERMANOS, NO anidados -->
+  <!-- Esto evita el bug de Chrome donde backdrop-filter crea un containing block para position:fixed -->
+  <div class="modal-overlay" id="subproduct-modal-overlay"></div>
+  <div class="subproduct-modal" id="subproduct-modal">
+    <div class="modal-header">
+      <h2 id="modal-title" style="font-size: 1.5rem; font-weight: 800; color: #fff;">Colección</h2>
+      <button class="close-modal" id="close-modal"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="premium-card-grid" id="modal-grid" style="padding: 1rem 0;">
+        <!-- Inyectado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer del Carrito (Compartido con index pero aquí como UI independiente) -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button class="close-cart" id="close-cart"><i class="fa-solid fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p style="color: var(--color-text-muted); text-align: center; margin-top: 2rem;">Tu carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-amount">$ 0</span>
+      </div>
+      <button id="checkout-btn" class="checkout-btn" style="background: #8b5cf6; color: white; border: 1px solid #c084fc; border-radius: 8px; padding: 0.8rem; font-weight: bold; cursor: pointer; box-shadow: 0 0 10px #c084fc, 0 0 20px #8b5cf6; text-shadow: 0 0 5px rgba(255,255,255,0.5);"><i class="fa-solid fa-lock"></i> Comprar ahora</button>
+    </div>
+  </div>
+
+  <script src="js/currency.js?v=57"></script>
+  <script src="js/cartManager.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/premium-data.js?v=57"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+- `[x]` Generar imágenes para la categoría y los 5 juegos.
+- `[x]` Mover las imágenes al directorio `img/products/` del proyecto.
+- `[x]` Agregar la categoría "Moneda de Juegos" (ID 130) en `premium-data.js`.
+- `[x]` Agregar los subproductos (Fortnite, Roblox, Rocket League, Riot, Valorant) en `premium-data.js`.
+- `[x]` Configurar la variante "Monedas" con precio base de 4,125 ARS (para que 1000 sean 4125 ARS) y mínimo de 1000 unidades.
+- `[x]` Actualizar versión de caché y verificar.

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="33Store Blog - Noticias, guías y consejos de streaming e IA.">
+  <title>Blog - 33Store</title>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=55">
+  <link rel="stylesheet" href="./css/style.css?v=55">
+  
+  <style>
+    /* Specific Blog Styles based on NebulaMarket */
+    :root {
+      --blog-accent: #f002e1;
+      --blog-card-bg: rgba(255, 255, 255, 0.02);
+      --blog-card-border: rgba(255, 255, 255, 0.05);
+    }
+    
+    body {
+      background-color: #050505; /* Deep dark background */
+      color: #fff;
+    }
+
+    .blog-header {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+    }
+    .blog-header .subtitle {
+      color: var(--blog-accent);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .blog-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .blog-header h1 span {
+      color: var(--blog-accent);
+    }
+    .blog-header p {
+      color: #9ca3af;
+      font-size: 1.1rem;
+    }
+
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+
+    /* Date Badge */
+    .date-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    /* Read More Link */
+    .read-more {
+      color: var(--blog-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+      transition: gap 0.3s ease;
+    }
+    .read-more:hover {
+      gap: 0.8rem;
+    }
+
+    /* Featured Post */
+    .featured-post {
+      display: flex;
+      background: var(--blog-card-bg);
+      border: 1px solid var(--blog-card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .featured-post:hover {
+      border-color: rgba(240, 2, 225, 0.3);
+      box-shadow: 0 10px 40px rgba(240, 2, 225, 0.05);
+    }
+    .featured-image-wrapper {
+      width: 55%;
+      position: relative;
+    }
+    .featured-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 400px;
+    }
+    .featured-content {
+      width: 45%;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .featured-date {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .featured-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .featured-excerpt {
+      color: #9ca3af;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Grid Posts */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    .grid-post {
+      background: var(--blog-card-bg);
+      border: 1px solid var(--blog-card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .grid-post:hover {
+      border-color: rgba(240, 2, 225, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(240, 2, 225, 0.05);
+    }
+    .grid-image-wrapper {
+      position: relative;
+      height: 220px;
+    }
+    .grid-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .grid-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .grid-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+    .grid-excerpt {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .featured-post {
+        flex-direction: column;
+      }
+      .featured-image-wrapper {
+        width: 100%;
+      }
+      .featured-content {
+        width: 100%;
+        padding: 2rem 1.5rem;
+      }
+      .blog-header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar idéntico a index.html pero con Blog añadido -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand">
+        <div class="brand-icon" style="background: transparent; box-shadow: none;">
+          <img src="./img/logo.jpg" alt="33Store Logo" style="width: 100%; height: 100%; border-radius: 8px; object-fit: cover; mix-blend-mode: screen;">
+        </div>
+        33Store
+      </a>
+      
+      <div class="nav-links">
+        <a href="/" class="nav-link">Inicio</a>
+        <a href="productos" class="nav-link">Productos</a>
+        <a href="blog" class="nav-link active">Blog</a>
+        <a href="reseñas" class="nav-link">Reseñas</a>
+        <a href="soporte" class="nav-link">Soporte</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="currency-toggle">
+          <button class="currency-btn" data-currency="ARS">ARS</button>
+          <button class="currency-btn" data-currency="USD">USD</button>
+        </div>
+        <!-- Botón de carrito -->
+        <button class="cart-btn" id="cart-btn" aria-label="Abrir Carrito">
+          <i class="fa-solid fa-shopping-cart" style="font-size: 1.1rem;"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="blog-header">
+      <div class="subtitle">Novedades</div>
+      <h1>Desde el <span>blog</span></h1>
+      <p>Actualizaciones de productos, guías y anuncios del equipo de 33Store.</p>
+    </section>
+
+    <section class="blog-container" id="blog-container">
+      <!-- Los artículos se inyectarán aquí vía JS -->
+    </section>
+  </main>
+
+  <script src="./js/blog-data.js?v=4"></script>
+  <script>
+    (function() {
+      const container = document.getElementById('blog-container');
+      
+      if (typeof window.blogPosts === 'undefined' || window.blogPosts.length === 0) {
+        container.innerHTML = '<p style="text-align: center; margin-top: 2rem; color: #f002e1;">Cargando publicaciones...</p>';
+        return;
+      }
+      
+      const blogPosts = [...window.blogPosts].reverse();
+      
+      // Render Featured Post (First item)
+      const featured = blogPosts[0];
+      const featuredHTML = `
+        <a href="blog/${featured.slug}" class="featured-post">
+          <div class="featured-image-wrapper">
+            <div class="date-badge">${featured.date}</div>
+            <img src="${featured.thumbnail}" alt="${featured.title}" class="featured-image">
+          </div>
+          <div class="featured-content">
+            <div class="featured-date">${featured.date}</div>
+            <h2 class="featured-title">${featured.title}</h2>
+            <p class="featured-excerpt">${featured.excerpt}</p>
+            <div class="read-more">Leer post <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </a>
+      `;
+      
+      // Render Grid Posts
+      let gridHTML = '<div class="blog-grid">';
+      for(let i = 1; i < blogPosts.length; i++) {
+        const post = blogPosts[i];
+        gridHTML += `
+          <a href="blog/${post.slug}" class="grid-post">
+            <div class="grid-image-wrapper">
+              <div class="date-badge">${post.date}</div>
+              <img src="${post.thumbnail}" alt="${post.title}" class="grid-image">
+            </div>
+            <div class="grid-content">
+              <h3 class="grid-title">${post.title}</h3>
+              <p class="grid-excerpt">${post.excerpt}</p>
+              <div class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+          </a>
+        `;
+      }
+      gridHTML += '</div>';
+      
+      container.innerHTML = featuredHTML + gridHTML;
+    })();
+  </script>
+</body>
+</html>
